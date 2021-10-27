@@ -72,9 +72,9 @@ module.exports = {
       let Pages = songs.map((songz) => {
         let MappedSongs = songz.map(
           (s) =>
-            `\`${s.index + 1}.\` [${s.title}](${
+            `\**${s.index + 1}.**\ [${s.title}](${
               s.uri
-            }) \n**Author: **\`${s.author}\`**|** **Duration: **\`${prettyMilliseconds(s.duration, {
+            }) \n**Author: **\`${s.author}\` **|** **Duration: **\`${prettyMilliseconds(s.duration, {
               colonNotation: true,
             })}\``
         );
