@@ -102,18 +102,19 @@ module.exports = {
             player.play();
           SongAddedEmbed.setAuthor(`Added to queue`, client.botconfig.IconURL);
           SongAddedEmbed.setDescription(
-            `[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`
+            `\**Song: **\[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`
           );
           SongAddedEmbed.addField(
             "Author",
-            Searched.tracks[0].info.author,
+            `\`${Searched.tracks[0].info.author}\``,
             true
           );
+          SongAddedEmbed.addField("Requested by", Searched.tracks[0].requester, true);
           //SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(Searched.tracks[0].length, { colonNotation: true })}\``, true);
           if (player.queue.totalSize > 1)
             SongAddedEmbed.addField(
               "Position in queue",
-              `${player.queue.size - 0}`,
+              `\`${player.queue.size - 0}\``,
               true
             );
           Searching.edit(SongAddedEmbed);
@@ -148,7 +149,7 @@ module.exports = {
             `Playlist added to queue`,
             client.botconfig.IconURL
           );
-          // SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
+          SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
           SongAddedEmbed.setDescription(
             `[${Searched.playlist.name}](${SearchString})`
           );
@@ -171,11 +172,12 @@ module.exports = {
             player.play();
           SongAddedEmbed.setAuthor(`Added to queue`, client.botconfig.IconURL);
 
-          // SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
+          SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
           SongAddedEmbed.setDescription(
-            `[${Searched.tracks[0].title}](${Searched.tracks[0].uri})`
+            `\**Song: **\[${Searched.tracks[0].title}](${Searched.tracks[0].uri})`
           );
-          SongAddedEmbed.addField("Author", Searched.tracks[0].author, true);
+          SongAddedEmbed.addField("Author", `\`${Searched.tracks[0].author}\``, true);
+          SongAddedEmbed.addField("Requested by", Searched.tracks[0].requester, true);
           SongAddedEmbed.addField(
             "Duration",
             `\`${prettyMilliseconds(Searched.tracks[0].duration, {
@@ -186,7 +188,7 @@ module.exports = {
           if (player.queue.totalSize > 1)
             SongAddedEmbed.addField(
               "Position in queue",
-              `${player.queue.size - 0}`,
+              `\`${player.queue.size - 0}\``,
               true
             );
           Searching.edit(SongAddedEmbed);
@@ -285,17 +287,18 @@ module.exports = {
             );
             SongAddedEmbed.setColor(client.botconfig.EmbedColor);
             SongAddedEmbed.setDescription(
-              `[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`
+              `\**Song: **\[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`
             );
             SongAddedEmbed.addField(
               "Author",
-              Searched.tracks[0].info.author,
+              `\`${Searched.tracks[0].info.author}\``,
               true
             );
+            SongAddedEmbed.addField("Requested by", Searched.tracks[0].requester, true);
             if (player.queue.totalSize > 1)
               SongAddedEmbed.addField(
                 "Position in queue",
-                `${player.queue.size - 0}`,
+                `\`${player.queue.size - 0}\``,
                 true
               );
             return interaction.send(SongAddedEmbed);
@@ -308,13 +311,14 @@ module.exports = {
             SongAdded.setAuthor(`Added to queue`, client.botconfig.IconURL);
             SongAdded.setColor(client.botconfig.EmbedColor);
             SongAdded.setDescription(
-              `[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`
+              `\**Song: \[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`
             );
-            SongAdded.addField("Author", Searched.tracks[0].info.author, true);
+            SongAdded.addField("Author", `\`${Searched.tracks[0].info.author}\``, true);
+            SongAddedEmbed.addField("Requested by", Searched.tracks[0].requester, true);
             if (player.queue.totalSize > 1)
               SongAdded.addField(
                 "Position in queue",
-                `${player.queue.size - 0}`,
+                `\`${player.queue.size - 0}\``,
                 true
               );
             return interaction.send(SongAdded);
@@ -380,9 +384,10 @@ module.exports = {
             //SongAddedEmbed.setThumbnail(res.tracks[0].displayThumbnail());
             SongAddedEmbed.setColor(client.botconfig.EmbedColor);
             SongAddedEmbed.setDescription(
-              `[${res.tracks[0].title}](${res.tracks[0].uri})`
+              `\**Song: **\[${res.tracks[0].title}](${res.tracks[0].uri})`
             );
-            SongAddedEmbed.addField("Author", res.tracks[0].author, true);
+            SongAddedEmbed.addField("Author", `\`${res.tracks[0].author}\``, true);
+            SongAddedEmbed.addField("Requested by", res.tracks[0].requester, true);
             SongAddedEmbed.addField(
               "Duration",
               `\`${prettyMilliseconds(res.tracks[0].duration, {
@@ -393,12 +398,12 @@ module.exports = {
             if (player.queue.totalSize > 1)
               SongAddedEmbed.addField(
                 "Position in queue",
-                `${player.queue.size - 0}`,
+                `\`${player.queue.size - 0}\``,
                 true
               );
             return interaction.send(SongAddedEmbed);
 
-           case "PLAYLIST_LOADED":
+          case "PLAYLIST_LOADED":
             player.queue.add(res.tracks);
             await player.play();
             let SongAdded = new MessageEmbed();
@@ -406,7 +411,7 @@ module.exports = {
               `Playlist added to queue`,
               client.botconfig.IconURL
             );
-            //SongAdded.setThumbnail(res.tracks[0].displayThumbnail());
+            SongAdded.setThumbnail(res.tracks[0].displayThumbnail());
             SongAdded.setDescription(
               `[${res.playlist.name}](${interaction.data.options[0].value})`
             );
@@ -435,8 +440,9 @@ module.exports = {
               );
               SongAddedEmbed.setThumbnail(track.displayThumbnail());
               SongAddedEmbed.setColor(client.botconfig.EmbedColor);
-              SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
-              SongAddedEmbed.addField("Author", track.author, true);
+              SongAddedEmbed.setDescription(`\**Song: **\[${track.title}](${track.uri})`);
+              SongAddedEmbed.addField("Author", `\`${track.author}\``, true);
+              SongAddedEmbed.addField("Requested by", track.requester, true);
               SongAddedEmbed.addField(
                 "Duration",
                 `\`${prettyMilliseconds(track.duration, {
@@ -447,7 +453,7 @@ module.exports = {
               if (player.queue.totalSize > 1)
                 SongAddedEmbed.addField(
                   "Position in queue",
-                  `${player.queue.size - 0}`,
+                  `\`${player.queue.size - 0}\``,
                   true
                 );
               player.play();
@@ -460,19 +466,20 @@ module.exports = {
               );
               SongAddedEmbed.setThumbnail(track.displayThumbnail());
               SongAddedEmbed.setColor(client.botconfig.EmbedColor);
-              SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
-              SongAddedEmbed.addField("Author", track.author, true);
+              SongAddedEmbed.setDescription(`\**Song: **\[${track.title}](${track.uri})`);
+              SongAddedEmbed.addField("Author", `\`${track.author}\``, true);
+              SongAddedEmbed.addField("Requested by", track.requester, true)
               SongAddedEmbed.addField(
                 "Duration",
                 `\`${prettyMilliseconds(track.duration, {
                   colonNotation: true,
                 })}\``,
-                true
+                false
               );
               if (player.queue.totalSize > 1)
                 SongAddedEmbed.addField(
                   "Position in queue",
-                  `${player.queue.size - 0}`,
+                  `\`${player.queue.size - 0}\``,
                   true
                 );
               interaction.send(SongAddedEmbed);

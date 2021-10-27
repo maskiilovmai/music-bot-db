@@ -26,13 +26,15 @@ module.exports = {
         "❌ | **Nothing is playing right now...**"
       );
 
+    //When the queue has only one song
     if (!player.queue || !player.queue.length || player.queue === 0) {
       let QueueEmbed = new MessageEmbed()
         .setAuthor("Currently playing", client.botconfig.IconURL)
         .setColor(client.botconfig.EmbedColor)
         .setDescription(
-          `[${player.queue.current.title}](${player.queue.current.uri})`
+          `**Song: **[${player.queue.current.title}](${player.queue.current.uri})`
         )
+        .addField("Author", `\`${player.queue.current.author}\``, true)
         .addField("Requested by", `${player.queue.current.requester}`, true)
         .addField(
           "Duration",
@@ -62,19 +64,20 @@ module.exports = {
     let Pages = ChunkedSongs.map((Tracks) => {
       let SongsDescription = Tracks.map(
         (t) =>
-          `\`${t.index + 1}.\` [${t.title}](${t.uri}) \n\`${prettyMilliseconds(
+          `\**${t.index + 1}.\** [${t.title}](${t.uri}) \n\`${prettyMilliseconds(
             t.duration,
             {
               colonNotation: true,
             }
-          )}\` **|** Requested by: ${t.requester}\n`
+          )}\` **|** **Author: **\`${t.author}\` **|** **Requested by: **${t.requester}\n`
       ).join("\n");
 
+      //When the queue has more than 1 song
       let Embed = new MessageEmbed()
         .setAuthor("Queue", client.botconfig.IconURL)
         .setColor(client.botconfig.EmbedColor)
         .setDescription(
-          `**Currently Playing:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
+          `**Currently Playing:** \n**Song: **[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
         )
         .addField("Total songs: \n", `\`${player.queue.totalSize - 1}\``, true)
         .addField(
@@ -140,8 +143,9 @@ module.exports = {
           .setAuthor("Currently playing", client.botconfig.IconURL)
           .setColor(client.botconfig.EmbedColor)
           .setDescription(
-            `[${player.queue.current.title}](${player.queue.current.uri})`
+            `**Song: **[${player.queue.current.title}](${player.queue.current.uri})`
           )
+          .addField("Author", `\`${player.queue.current.author}\``, true)
           .addField("Requested by", `${player.queue.current.requester}`, true)
           .addField(
             "Duration",
@@ -175,7 +179,7 @@ module.exports = {
               t.uri
             }) \n\`${prettyMilliseconds(t.duration, {
               colonNotation: true,
-            })}\` **|** Requested by: ${t.requester}\n`
+            })}\`**|** **Author: **\`${t.author}\` **|** **Requested by: **${t.requester}\n`
         ).join("\n");
 
         let Embed = new MessageEmbed()

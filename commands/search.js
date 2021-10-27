@@ -74,7 +74,7 @@ module.exports = {
           (s) =>
             `\`${s.index + 1}.\` [${s.title}](${
               s.uri
-            }) \nDuration: \`${prettyMilliseconds(s.duration, {
+            }) \n**Author: **\`${s.author}\`**|** **Duration: **\`${prettyMilliseconds(s.duration, {
               colonNotation: true,
             })}\``
         );
@@ -134,8 +134,9 @@ module.exports = {
       SongAddedEmbed.setAuthor(`Added to queue`, client.botconfig.IconURL);
       SongAddedEmbed.setThumbnail(Song.displayThumbnail());
       SongAddedEmbed.setColor(client.botconfig.EmbedColor);
-      SongAddedEmbed.setDescription(`[${Song.title}](${Song.uri})`);
-      SongAddedEmbed.addField("Author", `${Song.author}`, true);
+      SongAddedEmbed.setDescription(`**Song: **[${Song.title}](${Song.uri})`);
+      SongAddedEmbed.addField("Author", `\`${Song.author}\``, true);
+      SongAddedEmbed.addField("Requested by", `${Song.requester}`, true)
       SongAddedEmbed.addField(
         "Duration",
         `\`${prettyMilliseconds(player.queue.current.duration, {
@@ -360,8 +361,9 @@ module.exports = {
               );
               SongAddedEmbed.setThumbnail(track.displayThumbnail());
               SongAddedEmbed.setColor(client.botconfig.EmbedColor);
-              SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
+              SongAddedEmbed.setDescription(`**Song: **[${track.title}](${track.uri})`);
               SongAddedEmbed.addField("Author", track.author, true);
+              SongAddedEmbed.addField("Requested by", `${Song.requester}`, true)
               SongAddedEmbed.addField(
                 "Duration",
                 `\`${prettyMilliseconds(track.duration, {

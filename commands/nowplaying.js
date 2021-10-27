@@ -29,7 +29,8 @@ module.exports = {
     let QueueEmbed = new MessageEmbed()
       .setAuthor("Currently playing", client.botconfig.IconURL)
       .setColor(client.botconfig.EmbedColor)
-      .setDescription(`[${song.title}](${song.uri})`)
+      .setDescription(`\**Song:**\ [${song.title}](${song.uri})`)
+      .addField("Author", `\`${song.author}\``, true)
       .addField("Requested by", `${song.requester}`, true)
       .addField(
         "Duration",
@@ -66,7 +67,8 @@ module.exports = {
       let QueueEmbed = new MessageEmbed()
         .setAuthor("Currently playing", client.botconfig.IconURL)
         .setColor(client.botconfig.EmbedColor)
-        .setDescription(`[${song.title}](${song.uri})`)
+        .setDescription(`\**Song:**\ [${song.title}](${song.uri})`)
+        .addField("Author", `\`${song.author}\``, true)
         .addField("Requested by", `${song.requester}`, true)
         .addField(
           "Duration",
