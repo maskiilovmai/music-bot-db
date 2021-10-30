@@ -37,7 +37,7 @@
     },
     "Website": {
       "description": "URL of your webserver (Example: https://domain.xyz). Change this if you want to use the web-dashboard.",
-      "value": "http://"
+      "value": "https://"
     },
     "Spotify_ClientID": {
       "description": "Spotify ClientID. This is used if you want to use Spotify features for your bot. (https://developer.spotify.com/dashboard/)",
