@@ -61,23 +61,23 @@
     },
     "Lavalink_id" : {
       "description": "The Discord Bot Lavalink ID",
-      "value": "null"
+      "value": "Main"
     },
     "Lavalink_host" : {
       "description": "The Discord Bot Lavalink Host",
-      "value": "null"
+      "value": "host name or IP"
     },
     "Lavalink_port" : {
       "description": "The Discord Bot Lavalink Port (The port that lavalink is listening to. This must be a number!)",
-      "value": "null"
+      "value": "443"
     },
     "Lavalink_pass" : {
       "description": "The Discord Bot Lavalink Pass",
-      "value": "null"
+      "value": "your password"
     },
     "Lavalink_secure" : {
       "description": "The Discord Bot Lavalink Secure (Set this to true if the lavalink uses SSL or you're hosting lavalink on repl.it)",
-      "value": "null"
+      "value": "true"
     }
   }
 }
