@@ -46,10 +46,6 @@
     "Spotify_ClientSecret": {
       "description": "Spotify ClientSecret. This is used if you want to use Spotify features for your bot. (https://developer.spotify.com/dashboard/)",
       "required": "true"
-    },
-    "24/7": {
-      "description": "If you want the bot to be stay in the vc 24/7 (true or false)",
-      "value": "true"
     }
   }
 }
