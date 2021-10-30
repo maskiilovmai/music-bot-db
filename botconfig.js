@@ -20,17 +20,17 @@ module.exports = {
   Website: process.env.Website || "http://localhost", //Website where it was hosted at includes http or https || Use "0.0.0.0" if you using Heroku
   
   Presence: {
-    status: "", // You can show online, idle, and dnd
-    name: "", // The message shown
-    type: "", // PLAYING, WATCHING, LISTENING, STREAMING
+    status: "online", // You can show online, idle, and dnd
+    name: "Music", // The message shown
+    type: "LISTENING", // PLAYING, WATCHING, LISTENING, STREAMING
   },
 
   //Lavalink
   Lavalink: {
-    id: "Main",
-    host: "host name or IP",
+    id: "NODE-MAIN-1",
+    host: "lavalink-repl.maikim.repl.co",
     port: 443, // The port that lavalink is listening to. This must be a number!
-    pass: "your password",
+    pass: "maskiilovmai",
     secure: true, // Set this to true if the lavalink uses SSL or you're hosting lavalink on repl.it
   },
 

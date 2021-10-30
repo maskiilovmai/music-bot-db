@@ -37,7 +37,7 @@
     },
     "Website": {
       "description": "URL of your webserver (Example: https://domain.xyz). Change this if you want to use the web-dashboard.",
-      "value": "http://localhost"
+      "value": "http://"
     },
     "Spotify_ClientID": {
       "description": "Spotify ClientID. This is used if you want to use Spotify features for your bot. (https://developer.spotify.com/dashboard/)",
@@ -47,37 +47,9 @@
       "description": "Spotify ClientSecret. This is used if you want to use Spotify features for your bot. (https://developer.spotify.com/dashboard/)",
       "required": "true"
     },
-    "Presence_status" : {
-      "description": "The Discord Bot Status (online, idle, and dnd)",
-      "value": "online"
-    },
-    "Presence_name" : {
-      "description": "The Discord Bot Activate (anything you want, default is 'Music')",
-      "value": "Music"
-    },
-    "Presence_type" : {
-      "description": "The Discord Bot Type (PLAYING, WATCHING, LISTENING, STREAMING)",
-      "value": "LISTENING"
-    },
-    "Lavalink_id" : {
-      "description": "The Discord Bot Lavalink ID",
-      "value": "Main"
-    },
-    "Lavalink_host" : {
-      "description": "The Discord Bot Lavalink Host",
-      "value": "host name or IP"
-    },
-    "Lavalink_port" : {
-      "description": "The Discord Bot Lavalink Port (The port that lavalink is listening to. This must be a number!)",
-      "value": "443"
-    },
-    "Lavalink_pass" : {
-      "description": "The Discord Bot Lavalink Pass",
-      "value": "your password"
-    },
-    "Lavalink_secure" : {
-      "description": "The Discord Bot Lavalink Secure (Set this to true if the lavalink uses SSL or you're hosting lavalink on repl.it)",
-      "value": "true"
+    "24/7": {
+      "description": "If you want the bot to be stay in the vc 24/7 (true or false)",
+      "required": "true"
     }
   }
 }
