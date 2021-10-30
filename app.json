@@ -46,6 +46,38 @@
     "Spotify_ClientSecret": {
       "description": "Spotify ClientSecret. This is used if you want to use Spotify features for your bot. (https://developer.spotify.com/dashboard/)",
       "required": "true"
+    },
+    "Presence_status" : {
+      "description": "The Discord Bot Status (online, idle, and dnd)",
+      "value": "online"
+    },
+    "Presence_name" : {
+      "description": "The Discord Bot Activate (anything you want, default is 'Music')",
+      "value": "Music"
+    },
+    "Presence_type" : {
+      "description": "The Discord Bot Type (PLAYING, WATCHING, LISTENING, STREAMING)",
+      "value": "LISTENING"
+    },
+    "Lavalink_id" : {
+      "description": "The Discord Bot Lavalink ID",
+      "value": "null"
+    },
+    "Lavalink_host" : {
+      "description": "The Discord Bot Lavalink Host",
+      "value": "null"
+    },
+    "Lavalink_port" : {
+      "description": "The Discord Bot Lavalink Port (The port that lavalink is listening to. This must be a number!)",
+      "value": "null"
+    },
+    "Lavalink_pass" : {
+      "description": "The Discord Bot Lavalink Pass",
+      "value": "null"
+    },
+    "Lavalink_secure" : {
+      "description": "The Discord Bot Lavalink Secure (Set this to true if the lavalink uses SSL or you're hosting lavalink on repl.it)",
+      "value": "null"
     }
   }
 }
