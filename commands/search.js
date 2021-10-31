@@ -104,7 +104,7 @@ module.exports = {
         .awaitMessages((msg) => message.author.id === msg.author.id, {
           max: 1,
           errors: ["time"],
-          time: 30000,
+          time: 60000,
         })
         .catch(() => {
           er = true;
