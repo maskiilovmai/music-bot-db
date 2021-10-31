@@ -62,7 +62,7 @@ What would you like to edit?
       );
       let prefix = await message.channel.awaitMessages(
         (msg) => msg.author.id === message.author.id,
-        { max: 1, time: 30000, errors: ["time"] }
+        { max: 1, time: 60000, errors: ["time"] }
       );
       if (!prefix.first())
         return client.sendTime(
@@ -88,7 +88,7 @@ What would you like to edit?
       );
       let role = await message.channel.awaitMessages(
         (msg) => msg.author.id === message.author.id,
-        { max: 1, time: 30000, errors: ["time"] }
+        { max: 1, time: 60000, errors: ["time"] }
       );
       if (!role.first())
         return client.sendTime(
