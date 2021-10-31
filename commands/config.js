@@ -36,7 +36,7 @@ What would you like to edit?
       (reaction, user) =>
         user.id === message.author.id &&
         ["1️⃣", "2️⃣"].includes(reaction.emoji.name),
-      { max: 1, errors: ["time"], time: 30000 }
+      { max: 1, errors: ["time"], time: 60000 }
     ).catch(() => {
       ConfigMessage.reactions.removeAll();
       client.sendTime(
