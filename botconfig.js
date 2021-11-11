@@ -11,27 +11,27 @@ module.exports = {
   ServerDeafen: true, //If you want bot to stay deafened
   DefaultVolume: 100, //Sets the default volume of the bot, You can change this number anywhere from 1 to 100
   CallbackURL: "/api/callback", //Discord OAuth2 Callback URL
-  "24/7": true, //If you want the bot to be stay in the vc 24/7
+  "24/7": process.env.Stay_Channel || true, //If you want the bot to be stay in the vc 24/7
   CookieSecret: "Maskiilov Mai", //A Secret like a password
   IconURL:
     "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/logo.gif", //URL of all embed author icons | Dont edit unless you dont need that Music CD Spining
   EmbedColor: "RANDOM", //Color of most embeds | Dont edit unless you want a specific color instead of a random one each time
   Permissions: 2205281600, //Bot Inviting Permissions
-  Website: process.env.Website || "http://localhost", //Website where it was hosted at includes http or https || Use "0.0.0.0" if you using Heroku
+  Website: process.env.Website || "https://localhost", //Website where it was hosted at includes http or https || Use "0.0.0.0" if you using Heroku
   
   Presence: {
-    status: "online", // You can show online, idle, and dnd
-    name: "Spotify", // The message shown
-    type: "LISTENING", // PLAYING, WATCHING, LISTENING, STREAMING
+    status: process.env.Presence_Status || "online", // You can show online, idle, and dnd
+    name: process.env.Presence_Name || "Haru はる", // The message shown
+    type: process.env.Presence_Type || "LISTENING", // PLAYING, WATCHING, LISTENING, STREAMING
   },
 
   //Lavalink
   Lavalink: {
-    id: "main",
-    host: "lava.link",
-    port: 80, // The port that lavalink is listening to. This must be a number!
-    pass: "maskiilovmai", // You can customize this!
-    secure: false, // Set this to true if the lavalink uses SSL or you're hosting lavalink on repl.it. If not set it to false
+    id: process.env.Lavalink_ID || "id",
+    host: process.env.Lavalink_Host || "host name",
+    port: process.env.Lavalink_Port || 443, // The port that lavalink is listening to. This must be a number!
+    pass: process.env.Lavalink_Pass || "pass", // You can customize this!
+    secure: process.env.Lavalink_Secure || true, // Set this to true if the lavalink uses SSL or you're hosting lavalink on repl.it. If not set it to false
   },
 
   //Please go to https://developer.spotify.com/dashboard/

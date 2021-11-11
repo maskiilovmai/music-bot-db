@@ -46,6 +46,42 @@
     "Spotify_ClientSecret": {
       "description": "Spotify ClientSecret. This is used if you want to use Spotify features for your bot. (https://developer.spotify.com/dashboard/)",
       "required": "true"
+    },
+    "Presence_Status": {
+      "description": "The Status Discord Bot (You can show online, idle, and dnd)",
+      "required": "true"
+    },
+    "Presence_Name": {
+      "description": "The Name of Status Discord Bot",
+      "required": "true"
+    },
+    "Presence_Type": {
+      "description": "The Type of Status Discord Bot (PLAYING, WATCHING, LISTENING, STREAMING)",
+      "required": "true"
+    },
+    "Lavalink_ID": {
+      "description": "The ID of Lavalink (default is 'main')",
+      "value": "main"
+    },
+    "Lavalink_Host": {
+      "description": "The Host Name of Lavalink",
+      "required": "true"
+    },
+    "Lavalink_Port": {
+      "description": "The Port of Lavalink",
+      "value": "80"
+    },
+    "Lavalink_Password": {
+      "description": "The Password of Lavalink",
+      "required": "true"
+    },
+    "Lavalink_Secure": {
+      "description": "The Secure of Lavalink (if Lavalink using SSL or hosted on Replit, set 'true'. If not set it to 'false')",
+      "value": "true or false"
+    },
+    "Stay_Channel": {
+      "description": "Set 'true' if you want the bot to be stay in the voice channel 24/7. Set 'false' if you don't want",
+      "value": "true or false"
     }
   }
 }
