@@ -60,15 +60,15 @@
       "required": "true"
     },
     "Lavalink_ID": {
-      "description": "The ID of Lavalink (default is 'main')",
+      "description": "The ID of Lavalink (default is 'main'). Support only Lavalink using SSL",
       "value": "main"
     },
     "Lavalink_Host": {
-      "description": "The Host Name of Lavalink",
+      "description": "The Host Name of Lavalink. Support only Lavalink using SSL",
       "required": "true"
     },
     "Lavalink_Password": {
-      "description": "The Password of Lavalink",
+      "description": "The Password of Lavalink. Support only Lavalink using SSL",
       "required": "true"
     }
   }
