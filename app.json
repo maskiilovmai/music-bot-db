@@ -67,21 +67,9 @@
       "description": "The Host Name of Lavalink",
       "required": "true"
     },
-    "Lavalink_Port": {
-      "description": "The Port of Lavalink",
-      "value": "80"
-    },
     "Lavalink_Password": {
       "description": "The Password of Lavalink",
       "required": "true"
-    },
-    "Lavalink_Secure": {
-      "description": "The Secure of Lavalink (if Lavalink using SSL or hosted on Replit, set 'true'. If not set it to 'false')",
-      "value": "true or false"
-    },
-    "Stay_Channel": {
-      "description": "Set 'true' if you want the bot to be stay in the voice channel 24/7. Set 'false' if you don't want",
-      "value": "true or false"
     }
   }
 }
