@@ -21,7 +21,7 @@ module.exports = {
   
   Presence: {
     status: process.env.Presence_Status || "online", // You can show online, idle, and dnd
-    name: process.env.Presence_Name || "Haru はる", // The message shown
+    name: process.env.Presence_Name || "Name", // The message shown
     type: process.env.Presence_Type || "LISTENING", // PLAYING, WATCHING, LISTENING, STREAMING
   },
 
