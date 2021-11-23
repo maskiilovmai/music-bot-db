@@ -59,6 +59,10 @@
       "description": "The Type of Status Discord Bot (PLAYING, WATCHING, LISTENING, STREAMING)",
       "required": "true"
     },
+    "Presence_URL": {
+      "description": "Set url Twitch if you set type is STREAMING",
+      "value": "https://twitch.tv/username"
+    },
     "Lavalink_ID": {
       "description": "The ID of Lavalink (default is 'main'). Support only Lavalink using SSL",
       "value": "main"

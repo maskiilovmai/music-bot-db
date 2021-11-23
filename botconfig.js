@@ -2,7 +2,7 @@ module.exports = {
   Admins: ["340479704962301952", "340479704962301952"], //Admins of the bot
   ExpressServer: true, //If you wanted to make the website run or not
   DefaultPrefix: process.env.Prefix || "?", //Default prefix, Server Admins can change the prefix
-  Port: 3000, //Which port website gonna be hosted
+  Port: 3000, //Which port website gonna be hosted (HTTPS: 443, HTTP: 80)
   SupportServer: "https://kutt.it/GrenadeGaming", //Support Server Link
   Token: process.env.Token || "", //Discord Bot Token
   ClientID: process.env.Discord_ClientID || "", //Discord Client ID
@@ -21,8 +21,9 @@ module.exports = {
   
   Presence: {
     status: process.env.Presence_Status || "online", // You can show online, idle, and dnd
-    name: process.env.Presence_Name || "Name", // The message shown
+    name: process.env.Presence_Name || "Name of status", // The message shown
     type: process.env.Presence_Type || "LISTENING", // PLAYING, WATCHING, LISTENING, STREAMING
+    url: process.env.Presence_URL || "https://twitch.tv/username" // Set url Twitch if you set type is STREAMING
   },
 
   //Lavalink
